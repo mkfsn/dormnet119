@@ -10,7 +10,9 @@
 
 </head>
 	<body background="http://flow-er.lomo.jp/sozai/kabe/006/1.gif">
-	<h1><font color="#926F4A">WEITING's GuestBoook</font><br/></h1>
+	<h1>
+	<img src="http://www5e.biglobe.ne.jp/~cep/3hana.gif"/>
+	<font color="#926F4A">WEITING's GuestBoook</font><img src="http://www5e.biglobe.ne.jp/~cep/3hana.gif"/><br/></h1>
 		<form method="POST">
 
 			Name:<br/> <input type="text" name="fname" /><br />
