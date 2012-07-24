@@ -1,9 +1,19 @@
 <html>
 <head>
     <title>~~Chat~~</title>
+    <style type="text/css">
+	body
+	{
+	    background-repeat:repeat-x;
+	    background-image:url('http://flow-er.lomo.jp/sozai/kabe/010/sita5.gif');
+	    background-position:center bottom;
+	}
+    </style>
 </head>
 <body>
-    
+    <div style="background-repeat:repeat;
+            background-image:url('http://flow-er.lomo.jp/sozai/kabe/011/kabe57.gif');">    
+    <h1><center><strong> -- Let's Chat!! -- </strong></strong></h1>
     <form action="chatroom.php"method="post">
     UserName:<input type="text" name="user"/><br />
     Message:<br />
@@ -11,6 +21,7 @@
     <br />
     <input type="submit"  value="submit"/>
     </form>
+    </div>
     <hr/>
     <?php
 	//print_r($_POST['user']);
@@ -36,7 +47,7 @@
 
 	if( isset( $_POST['user'] ) )
 	{
-	    write();
+	    write();   
 	}
 	read();
 
