@@ -28,13 +28,13 @@
 				$fptr = fopen("text.txt","a+");
 				fprintf($fptr,"%s(%s)said:\n",$_POST['fname'],date("Y-m-d H:i:s",time()));
 				fprintf($fptr,"%s\n",$_POST['fcontent']);
-				fprintf($fptr,"-----------------------------------\n");
+				fprintf($fptr,"--------------------------------------------\n");
 				fclose($fptr);
 			}
 			function read()
 			{
-				//$fptr = fopen("text.txt","w");
-				//fclose($fptr);
+				$fptr = fopen("text.txt","a+");
+				fclose($fptr);
 				$fptr = fopen("text.txt","r+");
 				while(!feof($fptr))
 				{
