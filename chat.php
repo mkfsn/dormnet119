@@ -1,4 +1,3 @@
-CTYPE html>
 <html>
 <body>
 
@@ -109,7 +108,4 @@ CTYPE html>
 
 </body>
 </html>
-
-
-
 
