@@ -1,7 +1,5 @@
-ession_start();
-	
-	$name;
-	$message;
+<?php
+	session_start();
 	
 	if ( isset($_POST['name']) && isset($_POST['message']) )
 	{
@@ -34,9 +32,9 @@ ession_start();
 		
 		$temp_str = "";
 		
-		while ( !feof( $file ) )
+		while ( $str = fgets($file) )
 		{
-			$temp_str .= fgets ( $file ) . '<br />';
+			$temp_str .= $str . '<br />';
 		}
 	
 		return $temp_str;
@@ -60,11 +58,11 @@ ession_start();
 		<title>My First Chatting Room</title>
 	</head>
 
-	<body>
+	<body bgcolor="#E0FFFF">
 
-		<h1>My First Chatting Room<br /></h1>
+		<h1 align="center">My First Chatting Room<br /></h1>
 		
-		<b><font face="標楷體" color="purple" size="4">☆∵　▁▂▄▂▁．★∵∴☆．★∴<br>∴★◢█████◣* ☆．∴★∵ * ☆<br>☆◢████☆██◣．∴天氣冷了,☆<br>◢■◤█████◥█◣．送你一件毛衣,<br>◥◤∴█████．◥◤∵小心別著涼了！<br> .∴☆ █████ :^^
+		<b><font face="標楷體" color="#EE7AE9" size="4">☆∵　▁▂▄▂▁．★∵∴☆．★∴<br>∴★◢█████◣* ☆．∴★∵ * ☆<br>☆◢████☆██◣．∴天氣冷了,☆<br>◢■◤█████◥█◣．送你一件毛衣,<br>◥◤∴█████．◥◤∵小心別著涼了！<br> .∴☆ █████ :^^
 		</font></b>
 		
 		<form action="test.php" method="post">
