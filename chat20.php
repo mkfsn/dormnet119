@@ -20,15 +20,14 @@
 </head>
 <body background="http://flow-er.lomo.jp/sozai/kabe/006/hana7.gif">
  <h1 style="color:blue;" align="center"> Welcome to neiyu's chatroom :D</h1>
- <form action="chat.php"method="post">
+ <form action="chat20.php"method="post">
  Name:<input type="text"name="name"/><br />
  Context:<br />
  <textarea row="200" cols="50" name="con">
  </textarea>
  <input type="submit"/><br />
   <?php
-  if(isset($_POST['name']))
-     write();
+  isset($_POST['name'])? write():false;
   read();   
   ?>
 </body>
