@@ -19,7 +19,7 @@
 	function func_write ( $name , $message  )
 	{	
 		$file = fopen ( "write.txt" , "a+" );
-		$str = '<br />' . "( " . date("Y/m/d-H:i:s") . " )" . $name . 'said' . ':' . $message . '<br />';
+		$str = '<br />' . "( " . date("Y/m/d-H:i:s") . " ) " . $name . ' said ' . ': ' . $message . '<br />';
 		
 		fwrite ( $file , $str );
 	
@@ -65,7 +65,7 @@
 		<b><font face="標楷體" color="#EE7AE9" size="4">☆∵　▁▂▄▂▁．★∵∴☆．★∴<br>∴★◢█████◣* ☆．∴★∵ * ☆<br>☆◢████☆██◣．∴天氣冷了,☆<br>◢■◤█████◥█◣．送你一件毛衣,<br>◥◤∴█████．◥◤∵小心別著涼了！<br> .∴☆ █████ :^^
 		</font></b>
 		
-		<form action="test.php" method="post">
+		<form method="post">
 		Name: <br /><input type="text" name="name" /><br />
 		
 		<br />
