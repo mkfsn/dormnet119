@@ -10,7 +10,9 @@
 
 </head>
 	<body background="http://flow-er.lomo.jp/sozai/kabe/006/1.gif">
-	<h1><font color="#926F4A">WEITING's GuestBoook</font><br/></h1>
+	<h1>
+	<img src="http://www5e.biglobe.ne.jp/~cep/3hana.gif"/>
+	<font color="#926F4A">WEITING's GuestBoook</font><img src="http://www5e.biglobe.ne.jp/~cep/3hana.gif"/><br/></h1>
 		<form method="POST">
 
 			Name:<br/> <input type="text" name="fname" /><br />
@@ -28,13 +30,13 @@
 				$fptr = fopen("text.txt","a+");
 				fprintf($fptr,"%s(%s)said:\n",$_POST['fname'],date("Y-m-d H:i:s",time()));
 				fprintf($fptr,"%s\n",$_POST['fcontent']);
-				fprintf($fptr,"-----------------------------------\n");
+				fprintf($fptr,"--------------------------------------------\n");
 				fclose($fptr);
 			}
 			function read()
 			{
-				//$fptr = fopen("text.txt","w");
-				//fclose($fptr);
+				$fptr = fopen("text.txt","a+");
+				fclose($fptr);
 				$fptr = fopen("text.txt","r+");
 				while(!feof($fptr))
 				{
