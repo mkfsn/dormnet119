@@ -1,6 +1,8 @@
 <html>
 <head>
+	<meta charset='utf-8' />
 	<title>Team2 Guestbook</title>
+	<link type="text/css" href="css/guestbook.css" rel="stylesheet" />
 </head>
 
 <body>
