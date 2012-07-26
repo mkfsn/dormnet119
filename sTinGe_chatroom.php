@@ -11,7 +11,7 @@
    <form action = 'message.php' method = 'post'><b>
 		<div style="color:#00FF00">
 		<p 
-		style = ' font-size:20px ; font-family:'¼Ð·¢Åé';'><big>N</big> a m e:</p>
+		style = ' font-size:20px ;'><big>N</big> a m e:</p>
 		<input type = 'text' name = 'fname' size = "20" /></br>
 		
 		<p style = " font-size:20px ;"><big>C</big> o n t e x t:</p>
