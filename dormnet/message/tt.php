@@ -3,7 +3,7 @@
     <meta charset="utf8" />
     <title>無標題文件</title>
     <style type="text/css">
-	.msgtable
+	.msgtable 
 	{    
 	    border:1px solid black;
 	    border-collapse: collapse;
@@ -14,6 +14,20 @@
 	.msgtable tr, .msgtable td  
 	{  
   	    border: 1px solid black;  
+	}
+	
+	.left
+	{
+	    margin-left:50;
+	    margin-right: auto;
+	    margin-bottom: 20;
+	}
+
+	.right
+	{
+	    margin-left:autO;
+	    margin-right:50;
+	    margin-bottom: 20;
 	}
 
     </style>
@@ -57,24 +71,26 @@
         $stm->execute(array( ':name' => $_POST['msg_name'], ':mail' => $_POST['msg_mail'], 'msg' => $_POST['msg_content']));
     }
    
-    function output()
+    function output($n)
     {
         require( "mysql.php" );
-        $sql = "SELECT * FROM `GuestBook`";
+        $sql = "SELECT * FROM `GuestBook` ORDER BY `id` DESC";
 
         $sth = $dbh->query($sql);
         foreach( $sth as $tmp )
         {
-            if($tmp['id']%2==0)
-            	echo  "<div><table class='msgtable' align='right' >";
+	    $n=$n+1;
+            if($n%2==0)
+            	echo  "<div><table class='msgtable right' >";
             else
-                echo  "<div><table class='msgtable' align='left' >";
+                echo  "<div><table class='msgtable left' >";
+
 
             echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
             echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
             echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
             echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] ) . "</table></div>";
-            echo  "<br/><br/><br/><br/><br/>";
+            
         }
     }
 
