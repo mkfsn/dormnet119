@@ -1,4 +1,5 @@
 <html>
+<head>
 <meta charset="utf8" />
 <title>無標題文件</title>
 </head>
@@ -68,8 +69,8 @@
 
 
 
+
 <div style=" position:relative; left:30%; width:70%;">
-留言顯示
 <?php
     output();
 ?>
