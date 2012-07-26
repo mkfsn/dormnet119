@@ -35,19 +35,19 @@
 		<div id="navbar">
 		<ul class="level1">
 		<!-- Button 1 -->
-		<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="±Jºô³ø­×">±Jºô³ø­×</a></li>
+		<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="å®¿ç¶²å ±ä¿®">å®¿ç¶²å ±ä¿®</a></li>
 
 		<!-- Button 2 : Drop menu -->
-		<li class="submenu">¬d¸ß...
+		<li class="submenu">æŸ¥è©¢...
 			<ul class="level2">
-				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryIPInfomation&amp;lang=zh" title="¬d¸ß IP ¦Cªí">¬d¸ß IP ¦Cªí</a></li>
-				<li><a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" title="«ÊÂê¦Cªí" target="_blank">«ÊÂê¦Cªí</a></li>
-				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryMACAddress&amp;lang=zh" title="ºû­×¶i«×">ºû­×¶i«×</a></li>
+				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryIPInfomation&amp;lang=zh" title="æŸ¥è©¢ IP åˆ—è¡¨">æŸ¥è©¢ IP åˆ—è¡¨</a></li>
+				<li><a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" title="å°é–åˆ—è¡¨" target="_blank">å°é–åˆ—è¡¨</a></li>
+				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryMACAddress&amp;lang=zh" title="ç¶­ä¿®é€²åº¦">ç¶­ä¿®é€²åº¦</a></li>
 			</ul>
 		</li>
 
 		<!-- Button 3 -->
-		<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="¯d¨¥ª©">¯d¨¥ª©</a></li>
+		<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="ç•™è¨€ç‰ˆ">ç•™è¨€ç‰ˆ</a></li>
 		</ul>
 		</div>
 		<!-- @end .navigation -->
@@ -55,9 +55,9 @@
 		<div class="content">
 
 			<div>
-				<h1 style="text-align: center; font-size: 36px; margin-left: -50px">¬d¸ß IP ¦Cªí</h1>
+				<h1 style="text-align: center; font-size: 36px; margin-left: -50px">æŸ¥è©¢ IP åˆ—è¡¨</h1>
 			</div>
-			<h3>½Ğ¿ï¾Ü¹ì«Ç¸ê°T</h3>
+			<h3>è«‹é¸æ“‡å¯¢å®¤è³‡è¨Š</h3>
 		<?php
 		require ( "mysql.php" ) ;
 		$sql  = "SELECT * FROM `ip_search`" ;
@@ -66,39 +66,39 @@
 		
 		?>
 	<form method = "post" >
-	 <p>±JªÙ´É§O : 
+	 <p>å®¿èˆæ£Ÿåˆ¥ : 
 	 <select name = "dorm">
-	  <option selected = "selected" placeholder >-- ½Ğ¿ï¾Ü --</option>
-	  <option value="wuling_1">ªZÀ­¤@§ø</option>
-	  <option value="wuling_2">ªZÀ­¤G§ø</option>
-	  <option value="wuling_3">ªZÀ­¤T§ø</option>
-	  <option value="wuling_4">ªZÀ­¥|§ø</option>
-	  <option value="jhweihan_a">»A¦ëA´É</option>
-	  <option value="jhweihan_b">»A¦ëB´É</option>
-	  <option value="jhweihan_c">»A¦ëC´É</option>
-	  <option value="jhweihan_d">»A¦ëD´É</option>
-	  <option value="jhweihan_e">»A¦ëE´É</option>
-	  <option value="jhweihan_f">»A¦ëF´É</option>
-	  <option value="jhweihan_g">»A¦ëG´É</option>
-	  <option value="jhweihan_h">»A¦ëH´É</option>
-	  <option value="jhweihan_l">»A¦ëL´É</option>
+	  <option selected = "selected" placeholder >-- è«‹é¸æ“‡ --</option>
+	  <option value="wuling_1">æ­¦å¶ºä¸€æ‘</option>
+	  <option value="wuling_2">æ­¦å¶ºäºŒæ‘</option>
+	  <option value="wuling_3">æ­¦å¶ºä¸‰æ‘</option>
+	  <option value="wuling_4">æ­¦å¶ºå››æ‘</option>
+	  <option value="jhweihan_a">ç¿ äº¨Aæ£Ÿ</option>
+	  <option value="jhweihan_b">ç¿ äº¨Bæ£Ÿ</option>
+	  <option value="jhweihan_c">ç¿ äº¨Cæ£Ÿ</option>
+	  <option value="jhweihan_d">ç¿ äº¨Dæ£Ÿ</option>
+	  <option value="jhweihan_e">ç¿ äº¨Eæ£Ÿ</option>
+	  <option value="jhweihan_f">ç¿ äº¨Fæ£Ÿ</option>
+	  <option value="jhweihan_g">ç¿ äº¨Gæ£Ÿ</option>
+	  <option value="jhweihan_h">ç¿ äº¨Hæ£Ÿ</option>
+	  <option value="jhweihan_l">ç¿ äº¨Læ£Ÿ</option>
 	 </select>
-	 <p>¹ì«Ç©Ğ¸¹ :
+	 <p>å¯¢å®¤æˆ¿è™Ÿ :
 	  <input type = "text" name = "room" size = "3" />
 	 </p>
-	 <p>¹ì«Ç§É¸¹ :
+	 <p>å¯¢å®¤åºŠè™Ÿ :
 	  <input type = "text" name = "bed" size = "3" />
 	 </p>
-	 <input type="submit" value="¶}©l¬d¸ß" id="start" />
+	 <input type="submit" value="é–‹å§‹æŸ¥è©¢" id="start" />
 	</form>
 	<?php
 		if ( isset($_POST[ 'dorm' ])&& isset($_POST[ 'room' ]) && isset($_POST[ 'bed' ]) ){
 			foreach ( $result as $tmp ){
 				if ( $_POST[ 'dorm' ] == $tmp[ 'dorm' ] && $_POST[ 'room' ] == $tmp[ 'room' ] && $_POST[ 'bed' ] == $_POST[ 'bed' ]){
-					echo '§É¦ì : '.htmlspecialchars( $tmp[ 'room' ] ).'-'.htmlspecialchars( $tmp[ 'bed' ] ).'</br>' ;
-					echo 'IP ¦ì§} : '.htmlspecialchars( $tmp[ 'IP' ] ).'</br>' ;
-					echo '¤lºô¸ô¾B¸n : '.htmlspecialchars( $tmp[ 'submask' ] ).'</br>' ;
-					echo '¹w³]§X¹D : '.htmlspecialchars( $tmp[ 'gateway' ] ).'</br>' ;
+					echo 'åºŠä½ : '.htmlspecialchars( $tmp[ 'room' ] ).'-'.htmlspecialchars( $tmp[ 'bed' ] ).'</br>' ;
+					echo 'IP ä½å€ : '.htmlspecialchars( $tmp[ 'IP' ] ).'</br>' ;
+					echo 'å­ç¶²è·¯é®ç½© : '.htmlspecialchars( $tmp[ 'submask' ] ).'</br>' ;
+					echo 'é è¨­åŒ£é“ : '.htmlspecialchars( $tmp[ 'gateway' ] ).'</br>' ;
 				}
 				
 			}
