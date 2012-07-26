@@ -40,33 +40,39 @@
         $stm = $dbh->prepare($sql);
         $stm->execute(array( ':name' => $_POST['msg_name'], ':mail' => $_POST['msg_mail'], 'msg' => $_POST['msg_content']));
     }
+   
+    function output()
+        {
+            require( "mysql.php" );
+            $sql = "SELECT * FROM `GuestBook`";
+
+            $sth = $dbh->query($sql);
+            foreach( $sth as $tmp )
+            {
+                if($tmp['id']%2==0)
+                    echo  "<div><table width='340' border='1' align='right' >";
+                else
+                    echo  "<div><table width='340' border='1' align='left' >";
+
+                 echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
+                 echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
+                 echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
+                 echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] ) . "</table></div>";
+                 echo  "<br/><br/><br/><br/><br/>";
+            }
+        }
+
+     isset($_POST['msg_name']) ? input() : false;
+
 ?>
 
 
 
 <div style=" position:relative; left:30%; overflow:scroll; width:70%;">
 留言顯示
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p><p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
-<p>1111</p>
+<?php
+    output();
+?>
 </div>
 </body>
 </html>
