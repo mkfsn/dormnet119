@@ -4,7 +4,7 @@
 </head>
 
 <body>
-    <div style="position:fixed; left:0%; height:100%; width:30%; float:left" 
+    <div style="position:fixed; left:0%; height:100%; width:30%; float:left">
         <p align="center">留言板</p>
         <form method="post">
 	<table align="center" style="text-align:center">
@@ -68,7 +68,7 @@
 
 
 
-<div style=" position:relative; left:30%; overflow:scroll; width:70%;">
+<div style=" position:relative; left:30%; width:70%;">
 留言顯示
 <?php
     output();
