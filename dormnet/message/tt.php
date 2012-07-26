@@ -89,12 +89,29 @@
             echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
             echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
             echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
-            echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] ) . "</table></div>";
+            echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
+	    echo  "<form method='post'><textarea name='replyMsg'></textarea><input type='hidden' name='replyid' value='".$tmp['id']."'><input type='submit' value='Reply'></form>";
+	    echo  htmlspecialchars( $tmp['replymsg'] );
+	    echo  "</table></div>";
             
         }
     }
 
+    function reply()
+    {
+	require("mysql.php");
+	$sql = "UPDATE `GuestBook` SET `replymsg`=':replymsg' WHERE `id`=':id'";
+	$dbh->query($sql);
+        $stm = $dbh->prepare($sql);
+	
+        $stm->execute(array( ':replymsg' => $stm['reply'].$_POST['replyMsg'], ':id' => $_POST['replyid']));
+
+    }
+
     isset($_POST['msg_name']) ? input() : false;
+    if ( isset($_POST['replyMsg']) ) {
+	reply();
+    }
 
 ?>
 
