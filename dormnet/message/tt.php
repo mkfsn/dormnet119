@@ -74,38 +74,67 @@
     function output($n)
     {
         require( "mysql.php" );
-        $sql = "SELECT * FROM `GuestBook` ORDER BY `id` DESC";
+        $sql = "SELECT * FROM `GuestBook` ORDER BY `timestamp` DESC";
 
-        $sth = $dbh->query($sql);
+        $sth = $dbh->query($sql); $sth2 = $dbh->query($sql);
         foreach( $sth as $tmp )
         {
-	    $n=$n+1;
-            if($n%2==0)
-            	echo  "<div><table class='msgtable right' >";
-            else
-                echo  "<div><table class='msgtable left' >";
+	    if($tmp['replyid']==0)
+	    {
+	    	$n=$n+1;
+            	if($n%2==0)
+            	    echo  "<div><table class='msgtable right' >";
+            	else
+                    echo  "<div><table class='msgtable left' >";
 
 
-            echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
-            echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
-            echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
-            echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
-	    echo  "<form method='post'><textarea name='replyMsg'></textarea><input type='hidden' name='replyid' value='".$tmp['id']."'><input type='submit' value='Reply'></form>";
-	    echo  htmlspecialchars( $tmp['replymsg'] );
-	    echo  "</table></div>";
+            	echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
+            	echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
+            	echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
+            	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
+	    	echo  "<form method='post'><textarea name='replyMsg'></textarea><input type='hidden' name='replyid' value='".$tmp['id']."'><input type='submit' value='Reply'></form>". "</td></tr>";
+	        /*$sql2 = "SELECT `msg` FROM `GuestBook` WHERE `id`=".$tmp['replyid'];
+		$stm->execute(array( 'id' => $tmp['replyid']));*/
+		foreach( $sth2 as $tmp2 )
+        	{
+            	    if($tmp2['replyid']==$tmp['id'])
+            	    {
+                	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp2['msg'] ) . "</td></tr>";
+                	
+            	    }
+		
+            	}
+		$sth2 = $dbh->query($sql);
+		echo  "</table></div>";
+		
+	    }
+	    /*else
+	    {   
+	    	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
+		echo  "</table></div>";
+	    }*/
             
         }
+	/*foreach( $sth as $tmp )
+        {
+            if($tmp['replyid']!=0)
+            {
+		echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
+                echo  "</table></div>";
+            }
+
+        }*/
+
     }
 
     function reply()
     {
 	require("mysql.php");
-	$sql = "UPDATE `GuestBook` SET `replymsg`=':replymsg' WHERE `id`=':id'";
+	$sql = "INSERT INTO `team2GuestDB`.`GuestBook` (`msg`, `replyid`) VALUES (:msg, :replyid);";
 	$dbh->query($sql);
         $stm = $dbh->prepare($sql);
 	
-        $stm->execute(array( ':replymsg' => $stm['reply'].$_POST['replyMsg'], ':id' => $_POST['replyid']));
-
+        $stm->execute(array( ':msg' => $_POST['replyMsg'], ':replyid' => $_POST['replyid']));
     }
 
     isset($_POST['msg_name']) ? input() : false;
