@@ -28,12 +28,12 @@
  <tr bgcolor ="gray" >  
     <td>目標位址</br>Target IP </td>
     <td>目標網卡</br>Physical Addr. </td>
-    <td>目標網孔</br>(參考)Plug(Not bed) </td>
+    <td>目標網孔</br>Plug</td>
     <td>封鎖原因</br>Banned Result </td>
     <td>封鎖時間</br>Disabled On </td>
   </tr> 
 </br>
-
+ 
 
 
 <?php  
@@ -61,16 +61,25 @@ foreach($result as $tmp){
 }
 
 else{
-
-	foreach($result as $tmp){		
+	$counter= 0;
+	
+	foreach($result as $tmp)	
+	{    
+	    if($counter%2 == 0){	 
 		echo '<tr>';
+		}
+	    else{
+		?>		
+		<tr bgcolor=#A4A4A4>
+		<?php
+		} 	
 		echo '<td>'.htmlspecialchars( $tmp['ip']).'</td>';
 		echo  '<td>'. htmlspecialchars($tmp['addr']).'</td>';
 		echo  '<td>'. htmlspecialchars($tmp['plug']).'</td>';
 		echo  '<td>'. htmlspecialchars($tmp['result']).'</td>';
 		echo  '<td>'. htmlspecialchars($tmp['bantime']).'</td>';
-//echo '<br/>';
-		}	
+	$counter++;	
+	}	
 
 }
 
@@ -94,7 +103,7 @@ else{
 <li>蓄意超量
 	<ul>
 	<li>說明：以任何方式逃避系統檢查的用戶，例如：更改IP、持續換網路孔等。</li>
-	<li>30天後系統自動解除，不需申請解除封鎖 (請參考<a href="http://bbs3.nsysu.edu.tw/txtVersion/boards/dorm-net-119/M.1154283306.A.html">2006年西灣公告</a>)。</li>
+	<li>30天後系統自動解除，不需申請解除封鎖 (請參考)</li>
 	</ul>
 </li>
  
