@@ -69,7 +69,6 @@
 
 
 <div style=" position:relative; left:30%; overflow:scroll; width:70%;">
-留言顯示
 <?php
     output();
 ?>
