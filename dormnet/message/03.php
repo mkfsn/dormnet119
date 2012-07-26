@@ -1,7 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf8" />
-    <title>無標題文件</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- TemplateBeginEditable name="doctitle" -->
+	<title>Dorm-net 119</title>
+	<!-- TemplateEndEditable -->
+	<!-- TemplateBeginEditable name="head" -->
+	<!-- TemplateEndEditable -->
+	<link href="./css/main.css" rel="stylesheet" type="text/css" />
+	<!-- Include JavaScripts -->
+	<script type="text/javascript" src="./scripts/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./scripts/main.js"></script>
     <style type="text/css">
 	.msgtable 
 	{    
@@ -34,6 +43,14 @@
 </head>
 
 <body>
+<canvas height="300px">
+	<p>Your browser doesn't support HTML5. Try using Firefox or Chrome.</p>
+</canvas>
+<script type="text/javascript" src="./scripts/bg.js"></script>
+    <div class="header" style="position:fixed; width:1000px; height:200px;">
+			<a href="./01_1.php"><img src="./images/banner.png" alt="Dormnet119 home" name="banner" /></a>
+		<!-- end .header -->
+    </div>
     <div style="position:fixed; left:0%; height:100%; width:30%; float:left">
         <p align="center">留言板</p>
         <form method="post">
@@ -74,67 +91,42 @@
     function output($n)
     {
         require( "mysql.php" );
-        $sql = "SELECT * FROM `GuestBook` ORDER BY `timestamp` DESC";
+        $sql = "SELECT * FROM `GuestBook` ORDER BY `id` DESC";
 
-        $sth = $dbh->query($sql); $sth2 = $dbh->query($sql);
+        $sth = $dbh->query($sql);
         foreach( $sth as $tmp )
         {
-	    if($tmp['replyid']==0)
-	    {
-	    	$n=$n+1;
-            	if($n%2==0)
-            	    echo  "<div><table class='msgtable right' >";
-            	else
-                    echo  "<div><table class='msgtable left' >";
+	    $n=$n+1;
+            if($n%2==0)
+            	echo  "<div><table class='msgtable right' >";
+            else
+                echo  "<div><table class='msgtable left' >";
 
 
-            	echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
-            	echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
-            	echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
-            	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
-	    	echo  "<form method='post'><textarea name='replyMsg'></textarea><input type='hidden' name='replyid' value='".$tmp['id']."'><input type='submit' value='Reply'></form>". "</td></tr>";
-	        /*$sql2 = "SELECT `msg` FROM `GuestBook` WHERE `id`=".$tmp['replyid'];
-		$stm->execute(array( 'id' => $tmp['replyid']));*/
-		foreach( $sth2 as $tmp2 )
-        	{
-            	    if($tmp2['replyid']==$tmp['id'])
-            	    {
-                	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp2['msg'] ) . "</td></tr>";
-                	
-            	    }
-		
-            	}
-		$sth2 = $dbh->query($sql);
-		echo  "</table></div>";
-		
-	    }
-	    /*else
-	    {   
-	    	echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
-		echo  "</table></div>";
-	    }*/
+            echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
+            echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
+            echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
+            echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
+	    echo  "<form method='post'><textarea name='replyMsg'></textarea><input type='hidden' name='replyid' value='".$tmp['id']."'><input type='submit' value='Reply'></form>";
+	    echo  htmlspecialchars( $tmp['replymsg'] );
+	    echo  "</table></div>";
             
         }
-	/*foreach( $sth as $tmp )
-        {
-            if($tmp['replyid']!=0)
-            {
-		echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] );
-                echo  "</table></div>";
-            }
-
-        }*/
-
     }
 
     function reply()
     {
 	require("mysql.php");
-	$sql = "INSERT INTO `team2GuestDB`.`GuestBook` (`msg`, `replyid`) VALUES (:msg, :replyid);";
-	$dbh->query($sql);
+        $sql = "SELECT `replymsg` FROM `GuestBook` WHERE `id` = '".$_POST['replyid']."'";
+	$sth = $dbh->query($sql);
+	$temp = $sth['replymsg'];
+
+	$sql = "INSERT INTO `team2GuestDB`.`GuestBook` (`replyid`, `replymsg`) VALUES (:replyid, :replymsg);";
+        $dbh->query($sql);
         $stm = $dbh->prepare($sql);
-	
-        $stm->execute(array( ':msg' => $_POST['replyMsg'], ':replyid' => $_POST['replyid']));
+	$temp = $_POST['replyMsg']; 
+        $stm->execute(array( ':replyid' => $_POST['replyid'], ':replymsg' => $temp));
+
     }
 
     isset($_POST['msg_name']) ? input() : false;

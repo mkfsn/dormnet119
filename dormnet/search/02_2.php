@@ -1,7 +1,7 @@
 <html>
 <head>
  <meta charset="utf8" >
-  <title>中山大學宿網報修系統</title>
+  <title>Dorm-net 119</title>
 
   <style type="text/css">
 	form#search {
