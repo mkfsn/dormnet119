@@ -1,7 +1,22 @@
 <html>
 <head>
-<meta charset="utf8" />
-<title>無標題文件</title>
+    <meta charset="utf8" />
+    <title>無標題文件</title>
+    <style type="text/css">
+	.msgtable
+	{    
+	    border:1px solid black;
+	    border-collapse: collapse;
+	    width:340px; 
+	    background-image:url('http://flow-er.lomo.jp/sozai/kabe/008/dot27.gif');
+	}
+		
+	.msgtable tr, .msgtable td  
+	{  
+  	    border: 1px solid black;  
+	}
+
+    </style>
 </head>
 
 <body>
@@ -43,27 +58,27 @@
     }
    
     function output()
+    {
+        require( "mysql.php" );
+        $sql = "SELECT * FROM `GuestBook`";
+
+        $sth = $dbh->query($sql);
+        foreach( $sth as $tmp )
         {
-            require( "mysql.php" );
-            $sql = "SELECT * FROM `GuestBook`";
+            if($tmp['id']%2==0)
+            	echo  "<div><table class='msgtable' align='right' >";
+            else
+                echo  "<div><table class='msgtable' align='left' >";
 
-            $sth = $dbh->query($sql);
-            foreach( $sth as $tmp )
-            {
-                if($tmp['id']%2==0)
-                    echo  "<div><table width='340' border='1' align='right' >";
-                else
-                    echo  "<div><table width='340' border='1' align='left' >";
-
-                 echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
-                 echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
-                 echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
-                 echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] ) . "</table></div>";
-                 echo  "<br/><br/><br/><br/><br/>";
-            }
+            echo  "<tr><td colspan='2' height=25px> " . htmlspecialchars( $tmp['timestamp'] ) . "</td></tr>";
+            echo  "<tr><td height='25px' width='100px'>" . htmlspecialchars( $tmp['name'] ) . "</td>";
+            echo  "<td height='25px' width='240px'>" .  htmlspecialchars( $tmp['mail'] ) . "</td></tr>";
+            echo  "<tr><td colspan='2'>" . htmlspecialchars( $tmp['msg'] ) . "</table></div>";
+            echo  "<br/><br/><br/><br/><br/>";
         }
+    }
 
-     isset($_POST['msg_name']) ? input() : false;
+    isset($_POST['msg_name']) ? input() : false;
 
 ?>
 
