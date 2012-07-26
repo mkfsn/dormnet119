@@ -101,7 +101,7 @@ else{
 <li><a name="section_wrongip"></a>IP設定錯誤(棟別-房號1 錯用 棟別-房號2 IP)
 	<ul>
 	<li>說明：當系統偵測到使用者未依規定設定各寢室分配的IP時，自動封鎖。</li>
-	<li>Step 1：請參考 <a href="http://dormnet119.cdpa.nsysu.edu.tw/?action=Tuition&type=QueryIPInfomation" target="_blank" title="查詢IP設定值">查詢IP設定值</a> 或 <a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" target="_blank" title="查詢IP分配表">查詢IP分配表</a> 設定正確的IP <span style="color: blue;">(重設時請不要搶同寢室友IP)</span>。</li>
+	<li>Step 1：請參考 <a href="http://dormnet119.cdpa.nsysu.edu.tw/?action=Tuition&type=QueryIPInfomation" target="_blank" title="查詢IP設定值">查詢IP設定值</a> 或 <a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" target="_blank" title="查詢IP分配表">查詢IP分配表</a> 設定正確的IP <span style="color: red;">(重設時請不要搶同寢室友IP)</span>。</li>
 	<li>Step 2：在本網站填寫報修單申請解除封鎖，<span style="color: red;">不需</span>到西灣dorm-net-119版貼版。</li>
 	<li>請注意：若下列情況成立時代表系統判斷錯誤，請以報修單告知我們，造成不便請見諒。<ul>
 		<li>房號1<span style="color: red;">不是</span>自己的房間</li>
