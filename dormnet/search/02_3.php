@@ -23,16 +23,9 @@
 </script>
 <head>
 	<meta charset="utf-8"/>
-	<title></title>
+	<title>Dorm-net 119</title>
+	<link href="./css/main.css" rel="stylesheet" type="text/css" />
 	<style>
-	fieldset {
-		color:#000000; 
-		border:1px #000000 solid;
-	} 
-	legend {
-		color:#000000; 
-		background:#fff;
-	}
 	table{
 		border:1px #000000 solid;
 		border-collapse:collapse;
@@ -52,16 +45,54 @@
 </head>
 <body>
 
-	
-	<fieldset>
-		<legend>維修進度查詢</legend><br/>
+	<canvas height="300px">
+        <p>Your browser doesn't support HTML5. Try using Firefox or Chrome.</p>
+</canvas>
+<script type="text/javascript" src="./scripts/bg.js"></script>
+
+
+<div class="outerWrapper">
+        <!-- @start .container -->
+        <div class="container">
+                <!-- @start .container -->
+                <div class="header" style="width:1000px; height:200px;">
+                        <a href="./01_1.php"><img src="./images/banner.png" alt="Dormnet119 home" name="banner" /></a>
+                <!-- end .header -->
+                </div>
+
+                <!-- @start .navbar -->
+                <div id="navbar">
+                <ul class="level1">
+                <!-- Button 1 -->
+                <li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="宿網報修">宿網報修</a></li>
+
+                <!-- Button 2 : Drop menu -->
+                <li class="submenu">查詢...
+                        <ul class="level2">
+                                <li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryIPInfomation&amp;lang=zh" title="查詢 IP 列表">查詢 IP 列表
+</a></li>
+                                <li><a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" title="封鎖列表" target="_blank">封鎖列表</a></li>
+                                <li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryMACAddress&amp;lang=zh" title="維修進度">維修進度</a></li>
+                        </ul>
+                </li>
+
+                <!-- Button 3 -->
+                <li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="留言版">留言版</a></li>
+                </ul>
+                </div>
+
+		<div class="content">	
+		<div>
+                	<h1 style="text-align: center; font-size: 36px; margin-left: -50px">維修進度查詢</h1>
+                </div>
+
 		<form method="POST">
 			<font size=3>*請輸入至少一項查詢條件*</font><br/><br/>
 			報修人姓名：<input type="text" name="uname" /><br />
 			報修人信箱：<input type="text" name="umail" /><br />
 			<input type="submit" value="開始查詢" />
 		</form>
-	</fieldset>
+	
 	<?php 
 		function data()
 		{
@@ -122,6 +153,7 @@
 		if(isset($_POST['uname']) || isset($_POST['umail']))	
 			data();
 	?>
+			</div>
 	
 </body>
 </html>
