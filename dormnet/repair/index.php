@@ -17,7 +17,7 @@
 
 <!-- HTML5 Canvas -->
 <canvas height="300px">
-	<p>Your browser doesn't support HTML5. Try using Firefox or Chrome.</p>
+	<p>Your browser doesn't support HTML5. Try using Firefox or Chrome. Or enable JavaScript on this site.</p>
 </canvas>
 <script type="text/javascript" src="./scripts/bg.js"></script>
 
@@ -26,7 +26,7 @@
 	<div class="container">
 		<!-- @start .container -->
 		<div class="header" style="width:1000px; height:200px;">
-			<a href="./01_1.php"><img src="./images/banner.png" alt="Dormnet119 home" name="banner" /></a>
+			<a href="./index.php"><img src="./images/banner.png" alt="Dormnet119 home" name="banner" /></a>
 		<!-- end .header -->
 		</div>
 
@@ -39,14 +39,14 @@
 		<!-- Button 2 : Drop menu -->
 		<li class="submenu">查詢...
 			<ul class="level2">
-				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryIPInfomation&amp;lang=zh" title="查詢 IP 列表">查詢 IP 列表</a></li>
-				<li><a href="http://wiki.cdpa.nsysu.edu.tw/Dorms_ip" title="封鎖列表" target="_blank">封鎖列表</a></li>
-				<li><a href="http://dormnet119.cdpa.tw/?action=Tuition&amp;type=QueryMACAddress&amp;lang=zh" title="維修進度">維修進度</a></li>
+				<li><a href="http://140.117.202.136/dormnet119/dormnet/search/02_1.php" title="查詢 IP 列表">查詢 IP 列表</a></li>
+				<li><a href="http://140.117.202.136/dormnet119/dormnet/search/02_2.php" title="封鎖列表" target="_blank">封鎖列表</a></li>
+				<li><a href="http://140.117.202.136/dormnet119/dormnet/search/02_3.php" title="維修進度">維修進度</a></li>
 			</ul>
 		</li>
 
 		<!-- Button 3 -->
-		<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="留言版">留言版</a></li>
+		<li><a href="http://140.117.202.136/dormnet119/dormnet/message/03_3.php" title="留言版">留言版</a></li>
 		</ul>
 		</div>
 		<!-- @end .navigation -->
@@ -67,6 +67,9 @@
 						<p>
 							<input name="input_uname" placeholder="報修人姓名..." title="報修人姓名" maxlength="30" />
 							*
+							<span class="tooltip">
+								<img src="./images/tooltip.png" name="tooltip1" />
+							</span>
 						</p>
 					</div>
 
@@ -85,20 +88,20 @@
 						<p>
 							<select name="sel_dorm">
 								<option value="" selected="selected"><-- 請選擇宿舍棟別 --></option>
-								<option value="1">武嶺一村</option>
-								<option value="2">武嶺二村</option>
-								<option value="3">武嶺三村</option>
-								<option value="4">武嶺四村</option>
+								<option value="1">1. 武嶺一村</option>
+								<option value="2">2. 武嶺二村</option>
+								<option value="3">3. 武嶺三村</option>
+								<option value="4">4. 武嶺四村</option>
 								<option value="-">----------</option>
-								<option value="A">翠亨A棟</option>
-								<option value="B">翠亨B棟</option>
-								<option value="C">翠亨C棟</option>
-								<option value="D">翠亨D棟</option>
-								<option value="E">翠亨E棟</option>
-								<option value="F">翠亨F棟</option>
-								<option value="G">翠亨G棟</option>
-								<option value="H">翠亨H棟</option>
-								<option value="L">翠亨L棟</option>
+								<option value="A">A. 翠亨A棟</option>
+								<option value="B">B. 翠亨B棟</option>
+								<option value="C">C. 翠亨C棟</option>
+								<option value="D">D. 翠亨D棟</option>
+								<option value="E">E. 翠亨E棟</option>
+								<option value="F">F. 翠亨F棟</option>
+								<option value="G">G. 翠亨G棟</option>
+								<option value="H">H. 翠亨H棟</option>
+								<option value="L">L. 翠亨L棟</option>
 							</select>
 							*
 						</p>
@@ -150,11 +153,11 @@
 						<p>初步問題研判：
 							<select name="sel_problem">
 								<option value="" selected="selected"><-- 請選擇問題類型 --></option>
-								<option value="ipstolen">(1) IP 被人佔用</option>
-								<option value="reopen">(2) 申請解除封鎖</option>
-								<option value="broken">(3) 網路插孔 外觀損壞，申請維修</option>
-								<option value="dvo">(4) 網路插孔 已損壞</option>
-								<option value="others">(5) 其他</option>
+								<option value="ipstolen">1. IP 被人佔用</option>
+								<option value="reopen">2. 申請解除封鎖</option>
+								<option value="broken">3. 網路插孔 外觀損壞，申請維修</option>
+								<option value="dvo">4. 網路插孔 已損壞</option>
+								<option value="others">5. 其他</option>
 							</select>
 							*
 						</p>
