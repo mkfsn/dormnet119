@@ -80,8 +80,8 @@
         {
 	    if($tmp['replyid']==0)
 	    {
-	    	$n=$n+1;
-            	if($n%2==0)
+	    	$n += 1;
+            	if($n % 2 == 0)
             	    echo  "<div><table class='msgtable right' >";
             	else
                     echo  "<div><table class='msgtable left' >";

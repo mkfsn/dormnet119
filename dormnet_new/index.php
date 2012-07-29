@@ -1,22 +1,56 @@
 <!DOCTYPE html>
 
 <?php
-	// Way 1 : Get host automatically
-	// $host = $_SERVER['HTTP_HOST'];
-	
-	// Way 2 : Set host manually (No trailing slash)
-	$host = "http://140.117.202.136/~ebola777/dormnet_new";
-	
+	// [Info.] Prepare URL host (Relative) & file path (Absolute)
+
+	$host = '/dormnet';
+	$path = dirname(__FILE__); // Path of home directory
 ?>
+
+<?php
+	// [Info.] Prepare path & url
+	
+	$path_php_main = '/[include]/[php]/main.php';
+	$path_css_main = '/[include]/css/main.css';
+	$path_js_jquery = '/[include]/scripts/jquery-1.7.2.min.js';
+	$path_js_main = '/[include]/scripts/main.js';
+	$path_js_bg = '/[include]/scripts/bg.js';
+	$path_img_banner = '/[include]/images/banner.png';
+	
+	$path_cont_index = '/[include]/index.php';
+	$path_cont_message = '/[include]/[message]/index.php';
+	$path_cont_repair = '/[include]/[repair]/index.php';
+	$path_cont_search = '/[include]/[search]/index.php';
+	
+	$url_index = '';
+	$url_message = '/message/';
+	$url_repair = '/repair/';
+	$url_search = '/search/';
+?>
+
+<?php
+	// [Info.] Include PHP function file
+	//include "$host" . '$path_php_main';
+?>
+
+<?php
+	// [Info.] Prepare script name (For detecting internal php require command)
+	
+	// Get script name (ex. message/index.php)
+	$script = $_SERVER['SCRIPT_NAME'];
+	$arr_script = explode('/', $script);
+	$arr_script = array_reverse($arr_script);
+?>
+
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Dorm-net 119</title>
 	<!-- Include CSS -->
-	<link href="<?php echo "$host"; ?>/[include]/css/main.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo "$host" . "$path_css_main"; ?>" />
 	<!-- Include JavaScripts -->
-	<script type="text/javascript" src="<?php echo "$host"; ?>/[include]/scripts/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="<?php echo "$host"; ?>/[include]/scripts/main.js"></script>
+	<script type="text/javascript" src="<?php echo "$host" . "$path_js_jquery"; ?>"></script>
+	<script type="text/javascript" src="<?php echo "$host" . "$path_js_main"; ?>"></script>
 </head>
 
 <body>
@@ -24,7 +58,7 @@
 	<canvas height="300px">
 		<p>Your browser doesn't support HTML5. Try using Firefox or Chrome. Or enable JavaScript on this site.</p>
 	</canvas>
-	<script type="text/javascript" src="<?php echo "$host"; ?>/[include]/scripts/bg.js"></script>
+	<script type="text/javascript" src="<?php echo "$host" . "$path_js_bg"; ?>"></script>
 
 	<!-- Outer wrapper -->
 	<div class="outerWrapper">
@@ -32,14 +66,14 @@
 		<div class="container">
 			<!-- @start header -->
 			<div class="header" style="width:1000px; height:200px;">
-				<a href="#"><img src="<?php echo "$host"; ?>/[include]/images/banner.png" alt="Dormnet119 home" name="banner" /></a>
+				<a href="<?php echo "$host" . "$url_index"; ?>"><img src="<?php echo "$host" . "$path_img_banner"; ?>" alt="Dormnet119 home" name="banner" /></a>
 			</div>
 
 			<!-- @start .navbar -->
 			<div id="navbar">
 				<ul class="level1">
 				<!-- Button 1 -->
-				<li><a href="http://dormnet119.cdpa.tw/?action=BugReport&amp;lang=zh" title="宿網報修">宿網報修</a></li>
+				<li><a href="<?php echo "$host" . "$url_repair"; ?>" title="宿網報修">宿網報修</a></li>
 
 				<!-- Button 2 : Drop menu -->
 				<li class="submenu">查詢...
@@ -56,13 +90,33 @@
 			</div>
 
 			<?php 
-			
-				$script = $_SERVER['SCRIPT_NAME'];
+				// [Info.] Prepare html contents
+				$cont;
 				
-				echo "$host";
-				echo "<br>";
-				echo "$script";
-			
+				switch ($arr_script[1])
+				{
+					case 'dormnet': //----- Dormnet -----
+						$cont = file_get_contents("$path" . "$path_cont_index");
+					
+					break;
+					case 'message': //----- Message -----
+						$cont = file_get_contents("$path" . "$path_cont_message");
+					
+					break;
+					case 'repair': //----- Repair -----
+						$cont = file_get_contents("$path" . "$path_cont_repair");
+					
+					break;
+					case 'search': //----- Search -----
+						$cont = file_get_contents("$path" . "$path_cont_search");
+					
+					break;
+					default:
+						$cont = 'Error : Could NOT resolve URL. (At include.php)';
+				}
+				
+				// Echo contents
+				echo "$cont";
 			?>
 
 			<!-- @start footer -->
