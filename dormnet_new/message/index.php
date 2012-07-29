@@ -1,9 +1,10 @@
 <?php
-	// Get host (Root URL)
-	$host = $_SERVER['HTTP_HOST'];
+	// Way 1 : Get host automatically
+	// $host = $_SERVER['HTTP_HOST'];
 	
-	$host = "file://C:/xampp/htdocs/dormnet"; // @@@
+	// Way 2 : Set host manually (No trailing slash)
+	$host = "http://140.117.202.136/~ebola777/dormnet_new";
 	
 	// Require main index file
-	//require($host . "/index.php");
+	require($host . "/index.php");
 ?>
