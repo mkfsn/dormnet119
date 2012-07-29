@@ -11,6 +11,17 @@
 		<!-- Include JavaScripts -->
 		<script type="text/javascript" src="./scripts/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="./scripts/main.js"></script>
+		<style>
+		table{
+			border:1px #000000 solid;
+			border-collapse:collapse;
+		} 
+		td{
+			border:1px solid;
+			text-align:center;
+			padding:5px;
+		}
+		</style>
 	</head>
 
 	<body>
@@ -115,10 +126,10 @@
 										echo '<td>床位</td><td> IP 位址</td><td>子網路遮罩</td><td>預設匣道</td>';
 										echo '</tr>' ;
 										echo '<tr>';
-										echo '<td>'.htmlspecialchars( $tmp[ 'room' ] ).'-'.htmlspecialchars( $tmp[ 'bed' ] ).'</td>' ;
-										echo '<td>'.htmlspecialchars( $tmp[ 'IP' ] ).'</td>' ;
-										echo '<td>'.htmlspecialchars( $tmp[ 'submask' ] ).'</td>' ;
-										echo '<td>'.htmlspecialchars( $tmp[ 'gateway' ] ).'</td></tr>' ;
+										echo '<td>'.'&nbsp'.htmlspecialchars( $tmp[ 'room' ] ).'-'.htmlspecialchars( $tmp[ 'bed' ] ).'&nbsp'.'</td>' ;
+										echo '<td>'.'&nbsp'.htmlspecialchars( $tmp[ 'IP' ] ).'&nbsp'.'</td>' ;
+										echo '<td>'.'&nbsp'.htmlspecialchars( $tmp[ 'submask' ] ).'&nbsp'.'</td>' ;
+										echo '<td>'.'&nbsp'.htmlspecialchars( $tmp[ 'gateway' ] ).'&nbsp'.'</td></tr>' ;
 										echo '</table>' ;
 									?>
 									</div>
@@ -133,20 +144,18 @@
 					</div>
 				</form>
 			</div>
-		</div>
-		<!-- @end .content -->
-		<!-- @start footer -->
-		<div id="footer"><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">Services</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Site Map</a> | <a href="#">Privacy</a><br />
-			<br />
-			Copyright c 2012 NSYSU-CDPA. All Rights Reserved. <img src="" width="1" />
-		<!-- @end footer -->
-		</div>
+		
+			<!-- @end .content -->
+			<!-- @start footer -->
+			<div id="footer"><a href="#">Home</a> | <a href="#">Products</a> | <a href="#">Services</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Site Map</a> | <a href="#">Privacy</a><br />
+				<br />
+				Copyright c 2012 NSYSU-CDPA. All Rights Reserved. <img src="" width="1" />
+			<!-- @end footer -->
+			</div>
 
 		<!-- @end .container -->
 		</div>
 	</div>
-
-
 	</body>
 </html>
 
