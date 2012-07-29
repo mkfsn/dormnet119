@@ -11,7 +11,7 @@ canvas {
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #2E2F33;
-	margin-top: 1.25em;
+	margin-top: 1em;
 	color: #000;
 }
 
@@ -47,7 +47,7 @@ a:hover, a:active, a:focus {
 	margin-right: auto;
 	text-align: left;
 	width: 920px;
-	background: #fff url(../images/content_bg.png) repeat-y left 13px;
+	background: #fff url(../images/content-bg.png) repeat-y left 13px;
 }
 
 .content {
@@ -163,18 +163,13 @@ a:hover, a:active, a:focus {
 	padding-bottom: 0.5em;
 }
 
-.box1 .tooltip {
-	padding-right: 24px;
-	float: right;
-}
-
-.input_type5em > p > input {
+.input_type25em > p > input {
 	/* border-style: none; */
 	font-size: 15px;
-	width: 5em;
+	width: 25em;
 }
 
-.input_type5em > p > span {
+.input_type25em > p > span {
 	font-size: 15px;
 	color: #999999;
 }
@@ -190,13 +185,13 @@ a:hover, a:active, a:focus {
 	color: #999999;
 }
 
-.input_type25em > p > input {
+.input_type5em > p > input {
 	/* border-style: none; */
 	font-size: 15px;
-	width: 25em;
+	width: 5em;
 }
 
-.input_type25em > p > span {
+.input_type5em > p > span {
 	font-size: 15px;
 	color: #999999;
 }
