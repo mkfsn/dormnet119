@@ -39,9 +39,9 @@
 			<!-- Button 2 : Drop menu -->
 			<li class="submenu">查詢...
 				<ul class="level2">
-					<li><a href="./02_1.php" title="查詢 IP 列表">查詢 IP 列表</a></li>
-					<li><a href="./02_2.php" title="封鎖列表" target="_blank">封鎖列表</a></li>
-					<li><a href="./02_3.php" title="維修進度">維修進度</a></li>
+					<li><a href="./02_1.php" title="查詢 IP 列表" >查詢 IP 列表</a></li>
+					<li><a href="./02_2.php" title="封鎖列表" >封鎖列表</a></li>
+					<li><a href="./02_3.php" title="維修進度" >維修進度</a></li>
 				</ul>
 			</li>
 
