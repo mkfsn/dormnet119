@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="./scripts/jquery-1.7.2.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
          	$("tr:odd").live('click', function(){
@@ -77,9 +77,9 @@ $(document).ready(function(){
 				<!-- Button 2 : Drop menu -->
 				<li class="submenu">查詢...
 					<ul class="level2">
-						<li><a href="./02_1.php" title="查詢 IP 列表">查詢 IP 列表</a></li>
-						<li><a href="./02_2.php" title="封鎖列表" target="_blank">封鎖列表</a></li>
-						<li><a href="./02_3.php" title="維修進度">維修進度</a></li>
+						<li><a href="./02_1.php" title="查詢 IP 列表" >查詢 IP 列表</a></li>
+						<li><a href="./02_2.php" title="封鎖列表" >封鎖列表</a></li>
+						<li><a href="./02_3.php" title="維修進度" >維修進度</a></li>
 					</ul>
 				</li>
 
@@ -97,6 +97,9 @@ $(document).ready(function(){
 					<!-- form start -->
 					<form method="POST">
 						<!-- Box1 start -->
+					<?php
+						function normal(){
+					?>
 						<div class = "box1">
 							<h2>請輸入任一查詢資訊</h2>
 							<div class = "name" >
@@ -111,8 +114,13 @@ $(document).ready(function(){
 								</p>
 							</div>
 						</div>
+						<div id = "submitarea">
+							<input type="submit" value="   送出 !   " name="start" />
+							<input type="reset" value="    清除    " name="clear" />
+						</div>
 						<!-- Box1 end -->
-						<?php 
+						<?php
+						}
 							function data(){
 								require("mysql.php");
 
@@ -175,12 +183,12 @@ $(document).ready(function(){
 						if(isset($_POST['uname']) || isset($_POST['umail'])){
 							data();
 						}
+						else{
+							normal() ;
+						}
 						?>
 								
-								<div id = "submitarea">
-									<input type="submit" value="   送出 !   " name="start" />
-									<input type="reset" value="    清除    " name="clear" />
-								</div>
+								
 					</form>
 			<!-- @end .content -->
 				</div>

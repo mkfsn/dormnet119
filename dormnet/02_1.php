@@ -50,9 +50,9 @@
 			<!-- Button 2 : Drop menu -->
 			<li class="submenu">查詢...
 				<ul class="level2">
-					<li><a href="./02_1.php" title="查詢 IP 列表">查詢 IP 列表</a></li>
-					<li><a href="./02_2.php" title="封鎖列表" target="_blank">封鎖列表</a></li>
-					<li><a href="./02_3.php" title="維修進度">維修進度</a></li>
+					<li><a href="./02_1.php" title="查詢 IP 列表" >查詢 IP 列表</a></li>
+					<li><a href="./02_2.php" title="封鎖列表" >封鎖列表</a></li>
+					<li><a href="./02_3.php" title="維修進度" >維修進度</a></li>
 				</ul>
 			</li>
 
@@ -79,9 +79,13 @@
 				<!-- MySQL connect end -->
 				<form name = "ip_search" method = "post" onsubmit="return CheckInfo();" >
 					<!-- Box -->
-					<div class = "box1">
+					
 					
 					<!--<img src = "./icon.png" align = "right" width = "164" height = "120" /> -->
+					<?php
+						function normal(){
+					?>
+						<div class = "box1">
 						<h2>請選擇寢室資訊</h2>
 						<div class = "dorm" >
 							<p>宿舍棟別 : 
@@ -113,7 +117,12 @@
 							</p>
 						</div>
 					</div>
+					<div id = "submitarea">
+						<input type="submit" value="   送出 !   " name="start" />
+						<input type="reset" value="    清除    " name="clear" />
+					</div>
 					<?php
+						}
 						if ( isset($_POST[ 'dorm' ])&& isset($_POST[ 'room' ]) && isset($_POST[ 'bed' ]) ){
 							foreach ( $result as $tmp ){
 								if ( $_POST[ 'dorm' ] == $tmp[ 'dorm' ] && $_POST[ 'room' ] == $tmp[ 'room' ] && $_POST[ 'bed' ] == $_POST[ 'bed' ]){								
@@ -137,11 +146,11 @@
 								}
 							}
 						}
+						else{
+							normal() ;
+						}
 							?>
-					<div id = "submitarea">
-						<input type="submit" value="   送出 !   " name="start" />
-						<input type="reset" value="    清除    " name="clear" />
-					</div>
+					
 				</form>
 			</div>
 		
