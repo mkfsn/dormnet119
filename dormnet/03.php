@@ -91,7 +91,7 @@
         $sql = "INSERT INTO `team2GuestDB`.`GuestBook` (`id`, `name`, `mail`, `msg`,`timestamp`) VALUES (NULL, :name, :mail, :msg, CURRENT_TIMESTAMP);";
         $dbh->query($sql);
         $stm = $dbh->prepare($sql);
-        $stm->execute(array( ':name' => $_POST['msg_name'], ':mail' => $_POST['msg_mail'], 'msg' => $_POST['msg_content']));
+        $stm->execute(array( ':name' => $_POST['msg_name'], ':mail' => $_POST['msg_mail'], ':msg' => $_POST['msg_content']));
     }
    
     function output($n)
@@ -147,11 +147,16 @@
 	
         $stm->execute(array( ':msg' => $_POST['replyMsg'], ':replyid' => $_POST['replyid']));
     }
-
-    if( $_POST['msg_name']!=" " )
+    
+    if( ($_POST['msg_name']!=' ') && ($_POST['msg_content']!=NULL) )
+    {
 	input();
-    if ( isset($_POST['replyMsg']) ) {
+	$_POST['msg_name']=' ';
+	$_POST['msg_content']=NULL;
+    }
+    if ( ($_POST['replyMsg']!=NULL) ) {
 	reply();
+	$_POST['replyMsg']=NULL;
     }
 
 ?>
