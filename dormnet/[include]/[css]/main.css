@@ -69,7 +69,7 @@ a:hover, a:active, a:focus {
 	margin-left: 29px; /* left banner margin */
 	margin-right: 31px; /* right banner margin */
 	padding: 0px;
-	background: #fff url(/dormnet/[include]/[images]/navbar_bg.png) repeat-x; /* _URL_ */
+	background: #fff url(../[images]/navbar_bg.png) repeat-x; /* _URL_ */
 	float: fixed;
 	font-size: 15px;
 	height: 32px;
@@ -110,7 +110,7 @@ a:hover, a:active, a:focus {
 }
 
 #navbar li:hover, #navbar li.iehover {
-	background: #fff url(/dormnet/[include]/[images]/navbar_bg_focus.png) repeat-x; /* _URL_ */
+	background: #fff url(../[images]/navbar_bg_focus.png) repeat-x; /* _URL_ */
 }
 
 #navbar li.submenu {
@@ -144,7 +144,7 @@ a:hover, a:active, a:focus {
 }
 
 #navbar ul.level2 {
-	background: #CCC url(/dormnet/[include]/[images]/navbar_submenu_bg.png); /* _URL_ */
+	background: #CCC url(../[images]/navbar_submenu_bg.png); /* _URL_ */
 	left: -1px;
 	text-align: center;
 }
