@@ -1,0 +1,234 @@
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin-top: 1em;
+	color: #000;
+
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 200px, #d5d6e5 500px); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(200px,#ffffff), color-stop(500px,#d5d6e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 200px,#d5d6e5 500px); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 200px,#d5d6e5 500px); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 200px,#d5d6e5 500px); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 200px,#d5d6e5 500px); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d5d6e5',GradientType=0 ); /* IE6-9 */
+}
+
+ul, ol, dl {
+	padding: 0;
+	margin: 0;
+	}
+h1, h2, h3, p, span {
+	margin-top: 0;	
+	padding-right: 15px;
+	padding-left: 30px; 
+}
+a img { 
+	border: none;
+}
+
+a:link {
+	color: #42413C;
+	text-decoration: underline;
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+
+.wrapper {
+	margin-top: 0;
+	margin-bottom: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	width: 920px;
+	background: #fff;
+	border: 1px solid #999999;
+	box-shadow:-3px 0px 5px #B2B2B2, 3px 0px 5px #B2B2B2;
+}
+
+.content {
+	padding-top: 3em;
+	padding-bottom: 10em;
+	padding-left: 3em;
+}
+
+.header {
+	padding-top: 20px;
+	padding-left: 29px; /* left banner margin */
+	padding-bottom: 3px;
+}
+
+/*----- Navigation bar -----*/
+#navbar {
+	border-top: 1px solid rgb(255, 255, 255);
+	margin-left: 29px; /* left banner margin */
+	margin-right: 31px; /* right banner margin */
+	padding: 0px;
+	background: #fff url(../[images]/navbar_bg.png) repeat-x; /* _URL_ */
+	float: fixed;
+	font-size: 15px;
+	height: 32px;
+}
+
+#navbar ul {
+	padding: 0px;
+	float: right;
+	text-align: center;
+	color: rgb(0, 0, 0);
+}
+
+#navbar li {
+	border-left: 1px solid rgb(255, 255, 255);
+	margin: 0px;
+	padding: 0.25em 0px;
+	list-style-type: none;
+	list-style-position: outside;
+	width: 8em;
+	text-align: center;
+	position: relative;
+	float: left;
+	color: rgb(0, 0, 0);
+}
+
+#navbar li a {
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	text-decoration: none;
+	font-size: 15px;
+	font-weight:bold;
+	color: rgb(255, 255, 255);
+}
+
+#navbar > ul > li > a {
+	height: 32px;
+}
+
+#navbar li:hover, #navbar li.iehover {
+	background: #fff url(../[images]/navbar_bg_focus.png) repeat-x; /* _URL_ */
+}
+
+#navbar li.submenu {
+	font-size: 15px;
+	font-weight: bold;
+	height: 32px;
+	color: rgb(255, 255, 255);
+}
+
+#navbar li.submenu:hover, #navbar li.submenu.iehover {
+
+}
+
+#navbar > ul a {
+	width: auto;
+}
+
+#navbar ul li ul {
+	position: absolute;
+	display: none;
+	top: 32px;
+}
+
+#navbar ul li ul li {
+	border-top: 1px solid rgb(255, 255, 255);
+	width: 8em;
+}
+
+#navbar ul.level1 li.submenu:hover ul.level2, #navbar ul.level1 li.submenu.iehover ul.level2 {
+	display: block;
+}
+
+#navbar ul.level2 {
+	background: #CCC url(../[images]/navbar_submenu_bg.png); /* _URL_ */
+	left: -1px;
+	text-align: center;
+}
+
+/*----- Box -----*/
+.box1 {
+	background: #D7DAE0;
+	width: 822px;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border: 2px outset #DEE0E5;
+}
+
+.box1 h2 {
+	color: #0C0C0C;
+	padding-bottom: 0.5em;
+}
+
+.input_type5em > p > input {
+	/* border-style: none; */
+	font-size: 15px;
+	width: 5em;
+}
+
+.input_type5em > p > span {
+	font-size: 15px;
+	color: #999999;
+}
+
+.input_type8em > p > input {
+	/* border-style: none; */
+	font-size: 15px;
+	width: 8em;
+}
+
+.input_type8em > p > span {
+	font-size: 15px;
+	color: #999999;
+}
+
+.input_type25em > p > input {
+	/* border-style: none; */
+	font-size: 15px;
+	width: 25em;
+}
+
+.input_type25em > p > span {
+	font-size: 15px;
+	color: #999999;
+}
+
+.select_typ12em > p > select {
+	font-size: 15px;
+	width: 12em;
+}
+
+.textarea_typ16px > p > textarea {
+	font-size: 16px;
+	width: 700px;
+	min-width: 500px;
+	max-width: 780px;
+	height: 300px;
+	min-height: 200px;
+	max-height: 1000px;
+}
+
+/*----- Submit area -----*/
+#submitarea {
+	margin-left: -50px; /* center object */
+	text-align: center;
+}
+
+#submitarea  > input{
+	font-weight: bold;
+	font-size: 16px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*----- Footer -----*/
+#footer {
+	padding-bottom: 0.75em;
+	font-size: 12px;
+	text-align: center;
+}
+

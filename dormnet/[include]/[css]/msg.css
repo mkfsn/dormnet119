@@ -1,0 +1,53 @@
+
+.msgtable
+{
+    border-bottom: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    border-collapse: collapse;
+    width: 400px;
+    background-image: url('../images/msgboxbg.png');	
+    margin: auto;
+    padding: 10px;
+    background-clip: content-box;
+    line-height: 30px;
+ }
+
+.msgtable tr, 
+.msgtable td
+{
+	/* border: 1px dotted  black;*/
+}
+
+.left
+{
+	/* margin-left:70;
+	margin-right: auto;*/
+	margin-bottom: 10px;
+}
+
+.right
+{
+	/*margin-left:auto;
+	margin-right:70;*/
+	margin-bottom: 10px;
+}
+
+#left_div
+{
+	position: absolute;
+	left: 13%; 
+	height: 100%; 
+	width: 30%;
+	float: left
+}
+
+.msg_box
+{
+	background: #D7DAE0;
+	border: 2px outset #DEE0E5;
+	width: 210px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
