@@ -1,5 +1,11 @@
 
-<?php	// [Info.] The following will be included in main page : div class "content"
+<?php	// [Info.] The following code will be included in main page : div class "content"
+?>
+
+<?php // [Info.] Prepare variables used in (X)HTML
+	
+	// Root path (Directory)
+	$root = get_rootPath('dormnet');
 ?>
 
 
@@ -8,7 +14,7 @@
 </div>
 
 <form name="buginfo" action="./?action=BugReport" method="post" onsubmit="return CheckInfo();">
-
+	
 	<!-- Box index 1 -->
 	<div class="box1">
 		<h2>聯絡方式</h2>

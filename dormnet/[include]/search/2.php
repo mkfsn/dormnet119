@@ -1,5 +1,5 @@
 
-<?php	// [Info.] The following will be included in main page : div class "content"
+<?php	// [Info.] The following code will be included in main page : div class "content"
 ?>
 
 <?php // [Info.] Prepare variables used in (X)HTML
@@ -28,7 +28,7 @@ td {
 	<h1 style="text-align: center; font-size: 36px; margin-left: -50px">網孔封鎖列表</h1>
 </div>
 <div class = "ip_search" >
-<form action="./02_2.php" method="post" id="search">
+<form method="post" id="search">
 	<p align="right" >搜尋IP:
 		<input type="text" name="ip"/>
 		<input type="submit" value="Send"/>
@@ -50,7 +50,7 @@ td {
 		  </tr> 
 		</br>
 		<?php
-			require "$root" . '/[include]/search/mysql.php';
+			require "$root" . '/[include]/[php]/mysql.php';
 			$sql ="SELECT * FROM `banlist` ";
 			$sth = $dbh->query($sql);
 			$result = $sth->fetchAll();

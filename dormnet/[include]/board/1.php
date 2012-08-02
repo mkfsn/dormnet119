@@ -1,5 +1,5 @@
 
-<?php	// [Info.] The following will be included in main page : div class "content"
+<?php	// [Info.] The following code will be included in main page : div class "content"
 ?>
 
 
@@ -37,7 +37,7 @@
 <?php
     function input()
     {
-        require("mysql.php");
+        require "$root" . '/[include]/[php]/mysql.php';
         $sql = "INSERT INTO `team2GuestDB`.`GuestBook` (`id`, `name`, `mail`, `msg`,`timestamp`) VALUES (NULL, :name, :mail, :msg, CURRENT_TIMESTAMP);";
         $dbh->query($sql);
         $stm = $dbh->prepare($sql);

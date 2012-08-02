@@ -1,5 +1,11 @@
 
-<?php	// [Info.] The following will be included in main page : div class "content"
+<?php	// [Info.] The following code will be included in main page : div class "content"
+?>
+
+<?php // [Info.] Prepare variables used in (X)HTML
+	
+	// Root path (Directory)
+	$root = get_rootPath('dormnet');
 ?>
 
 
@@ -78,7 +84,7 @@ $(document).ready(function(){
 		<?php
 		}
 		function data(){
-			require("mysql.php");
+			require "$root" . '/[include]/[php]/mysql.php';
 
 			$sth = $dbh->prepare('SELECT * FROM  `test1` WHERE  `mail` LIKE  :mail OR  `name` =  :name');
 			$sth->bindParam(':name',$_POST['uname']);

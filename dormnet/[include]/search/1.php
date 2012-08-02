@@ -1,5 +1,5 @@
 
-<?php	// [Info.] The following will be included in main page : div class "content"
+<?php	// [Info.] The following code will be included in main page : div class "content"
 ?>
 
 <?php // [Info.] Prepare variables used in (X)HTML
@@ -29,7 +29,7 @@ td{
 
 <!-- MySQL connect start -->
 <?php
-	require "$root" . '/[include]/search/mysql.php';
+	require "$root" . '/[include]/[php]/mysql.php';
 	$sql  = "SELECT * FROM `ip_search`" ;
 	$sth = $dbh -> query($sql) ;
 	$result = $sth -> fetchAll() ;
